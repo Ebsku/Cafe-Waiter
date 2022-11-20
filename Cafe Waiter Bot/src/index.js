@@ -1,11 +1,12 @@
 require('dotenv').config();
 const { token } = process.env;
-const { Client, Collection, GatewayIntentBits } = require ('discord.js');
+const { Client, Collection, GatewayIntentBits, PermissionFlagsBits } = require ('discord.js');
 const fs = require('fs');
 
 const client = new Client({ intents: GatewayIntentBits.Guilds });
 client.commands = new Collection();
 client.commandArray = [];
+client.colour = 'e1ff05';
 
 const functionFolders = fs.readdirSync(`./src/functions`);
 for (const folder of functionFolders) {
