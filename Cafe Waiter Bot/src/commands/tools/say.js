@@ -8,7 +8,7 @@ module.exports = {
         .setDefaultMemberPermissions(PermissionsBitField.Flags.ManageMessages),
 
     async execute(interaction, client) {
-        await interaction.channel.send({ content: interaction.options.getString('message') })
         interaction.reply({ content: `Message sent succesfully!`, ephemeral: true });
+        await interaction.channel.send({ content: interaction.options.getString('message') })
     }
 }
